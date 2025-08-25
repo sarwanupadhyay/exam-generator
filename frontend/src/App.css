@@ -8,6 +8,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
 /* Header Styles */
@@ -16,28 +17,29 @@
   margin-bottom: 0px;
 }
 
-
-
 .logo {
-  font-size: 70px;
+  font-size: clamp(32px, 6vw, 70px);
   color: #ec7379;
   margin-bottom: 10px;
 }
 
 .app-header h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
   margin-bottom: 20px;
   background: linear-gradient(45deg, #7403f5, #9540f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .app-header p {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   opacity: 0.9;
-  max-width: 600px;
+  max-width: min(600px, 90vw);
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Main Content */
@@ -46,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .generator-section,
@@ -54,6 +57,7 @@
 .exam-section {
   width: 100%;
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .loading-section {
@@ -69,110 +73,145 @@
   margin-top: 50px;
   padding: 30px 0;
   opacity: 1;
-  font-size: 1rem;
-  
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
 
-/* Tablet (up to 992px) */
-@media (max-width: 992px) {
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
   .container {
-    padding: 0 15px;
+    padding: 0 30px;
   }
+}
 
-  .app-header h1 {
-    font-size: 2.8rem;
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .container {
+    padding: 0 25px;
   }
+}
 
-  .app-header p {
-    font-size: 1.1rem;
-  }
-
-  .logo {
-    font-size: 55px;
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  .container {
+    padding: 0 20px;
   }
 
   .main-content {
     flex-direction: column;
-    padding: 20px 10px;
+    padding: 15px 0;
   }
 
   .generator-section,
   .exam-section {
     max-width: 100%;
-  }
-}
-
-/* Mobile (up to 768px) */
-@media (max-width: 768px) {
-  .app-header h1 {
-    font-size: 2.2rem;
-    line-height: 1.3;
-  }
-
-  .app-header p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .logo {
-    font-size: 40px;
-    margin-bottom: 15px;
-  }
-
-  .header-content {
-    padding: 20px 15px;
-  }
-
-  .generator-section,
-  .exam-section,
-  .loading-section,
-  .error-section {
     width: 95%;
-    margin: 0 auto;
-  }
-
-  /* make generator card slightly smaller than others */
-  .generator-section {
-    width: 90%;
-  }
-
-  .app-footer {
-    font-size: 0.9rem;
-    padding: 20px 0;
   }
 }
 
-/* Small Mobile (up to 480px) */
-@media (max-width: 480px) {
-  .app-header h1 {
-    font-size: 1.8rem;
+/* Small Tablet (576px - 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px;
   }
 
-  .app-header p {
-    font-size: 0.95rem;
-  }
-
-  .logo {
-    font-size: 32px;
+  .app-header {
+    padding: 15px 0;
   }
 
   .header-content {
     padding: 15px 10px;
   }
 
-  .main-content {
-    padding: 10px;
+  .generator-section,
+  .exam-section,
+  .loading-section,
+  .error-section {
+    width: 100%;
+    margin: 0 auto;
   }
 
-  /* shrink generator card more on small phones */
-  .generator-section {
-    width: 80%;
-    padding: 15px 12px;
+  .main-content {
+    padding: 10px 0;
   }
 
   .app-footer {
-    font-size: 0.8rem;
+    margin-top: 30px;
+    padding: 20px 0;
+  }
+}
+
+/* Mobile (480px - 575px) */
+@media (max-width: 575px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .app-header {
+    padding: 10px 0;
+  }
+
+  .header-content {
+    padding: 10px 5px;
+  }
+
+  .main-content {
+    padding: 5px 0;
+    margin-top: 10px;
+  }
+
+  .generator-section {
+    width: 100%;
+    padding: 10px 5px;
+  }
+
+  .app-footer {
+    margin-top: 25px;
+    padding: 15px 0;
+  }
+}
+
+/* Small Mobile (up to 479px) */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .app-header {
+    padding: 8px 0;
+  }
+
+  .header-content {
+    padding: 8px;
+  }
+
+  .main-content {
+    padding: 5px;
+  }
+
+  .generator-section {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .app-footer {
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+}
+
+/* Extra Small Mobile (up to 320px) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 5px;
+  }
+  
+  .app-header h1 {
+    word-break: break-all;
+  }
+  
+  .generator-section {
+    padding: 5px;
   }
 }

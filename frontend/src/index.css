@@ -4,29 +4,68 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Responsive font sizing */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 body {
   font-family: 'Bebas Neue', sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(135deg, #66ea7a 0%, #764ba2 100%); */
   background-color: #e5e5f7;
   opacity: 0.8;
   background-image: radial-gradient(#444cf7 0.9px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   min-height: 100vh;
-  padding: 20px;
+  padding: clamp(10px, 3vw, 20px);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Responsive background for smaller screens */
+@media (max-width: 768px) {
+  body {
+    background-size: 15px 15px;
+    background-position: 0 0, 7.5px 7.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 12px 12px;
+    background-position: 0 0, 6px 6px;
+  }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 clamp(10px, 3vw, 20px);
 }
 
 /* Loading spinner */
@@ -34,7 +73,6 @@ code {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -44,10 +82,62 @@ code {
   border: 4px solid #f3f3f3;
   border-top: 4px solid #4285f4;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: clamp(30px, 8vw, 40px);
+  height: clamp(30px, 8vw, 40px);
   animation: spin 1s linear infinite;
   margin: 0 auto;
+}
+
+/* Responsive spinner for smaller screens */
+@media (max-width: 480px) {
+  .spinner {
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 320px) {
+  .spinner {
+    border-width: 2px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Utility classes for responsive design */
+.hidden-mobile {
+  display: block;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .visible-mobile {
+    display: block;
+  }
+}
+
+/* Text utilities */
+.text-responsive {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Spacing utilities */
+.padding-responsive {
+  padding: clamp(10px, 3vw, 20px);
+}
+
+.margin-responsive {
+  margin: clamp(10px, 3vw, 20px);
 }
 
 /* Print styles */
@@ -55,9 +145,47 @@ code {
   body {
     background: white !important;
     color: black !important;
+    padding: 0 !important;
+    background-image: none !important;
   }
 
   .no-print {
     display: none !important;
+  }
+  
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #4285f4;
+  outline-offset: 2px;
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 }

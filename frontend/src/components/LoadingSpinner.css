@@ -3,25 +3,27 @@
   justify-content: center;
   align-items: center;
   min-height: 400px;
+  width: 100%;
+  padding: clamp(10px, 3vw, 20px);
 }
 
 .loading-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 50px 40px;
+  border-radius: clamp(15px, 3vw, 20px);
+  padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px);
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 500px;
+  max-width: min(500px, 90vw);
   width: 100%;
   color: #333;
 }
 
 .loading-icon {
-  font-size: 80px;
+  font-size: clamp(50px, 10vw, 80px);
   color: #4285f4;
-  margin-bottom: 25px;
+  margin-bottom: clamp(20px, 4vw, 25px);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -37,26 +39,29 @@
 }
 
 .loading-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  margin-bottom: clamp(20px, 5vw, 30px);
   color: #1a1a1a;
+  word-break: break-word;
 }
 
 .loading-steps {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  gap: 15px;
+  margin-bottom: clamp(20px, 5vw, 30px);
+  gap: clamp(10px, 3vw, 15px);
+  flex-wrap: wrap;
 }
 
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
   opacity: 0.4;
   transition: all 0.3s ease;
+  min-width: 60px;
 }
 
 .step.active {
@@ -65,9 +70,9 @@
 }
 
 .step i {
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
+  font-size: clamp(18px, 4vw, 24px);
+  width: clamp(40px, 8vw, 50px);
+  height: clamp(40px, 8vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,30 +93,34 @@
 }
 
 .step span {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .step-connector {
-  width: 30px;
+  width: clamp(20px, 5vw, 30px);
   height: 2px;
   background: rgba(66, 133, 244, 0.3);
   opacity: 0.4;
+  flex-shrink: 0;
 }
 
 .loading-text {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #666;
-  margin-bottom: 25px;
+  margin-bottom: clamp(20px, 4vw, 25px);
+  padding: 0 10px;
 }
 
 .progress-bar {
   width: 100%;
-  height: 6px;
+  height: clamp(4px, 1vw, 6px);
   background: rgba(66, 133, 244, 0.1);
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 .progress-fill {
@@ -129,58 +138,156 @@
 }
 
 .loading-note {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   color: #999;
   font-style: italic;
+  padding: 0 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
   .loading-card {
-    padding: 40px 30px;
-    margin: 0 20px;
-  }
-  
-  .loading-icon {
-    font-size: 60px;
-  }
-  
-  .loading-card h3 {
-    font-size: 1.5rem;
+    padding: 60px 50px;
   }
   
   .loading-steps {
-    gap: 10px;
-  }
-  
-  .step i {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-  
-  .step-connector {
-    width: 20px;
+    gap: 20px;
   }
 }
 
-@media (max-width: 480px) {
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .loading-container {
+    min-height: 350px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  .loading-container {
+    min-height: 300px;
+    padding: 15px;
+  }
+  
+  .loading-steps {
+    gap: 12px;
+  }
+}
+
+/* Small Tablet (576px - 767px) */
+@media (max-width: 767px) {
   .loading-card {
-    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  .loading-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .step-connector {
+    display: none; /* Hide connectors on smaller screens */
+  }
+}
+
+/* Mobile (480px - 575px) */
+@media (max-width: 575px) {
+  .loading-container {
+    min-height: 250px;
+    padding: 10px;
+  }
+  
+  .loading-card {
+    margin: 0 5px;
+  }
+  
+  .loading-steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .step {
+    flex: 1 1 auto;
+    min-width: calc(33.333% - 10px);
+  }
+}
+
+/* Small Mobile (up to 479px) */
+@media (max-width: 479px) {
+  .loading-container {
+    min-height: 200px;
   }
   
   .loading-steps {
     flex-direction: column;
-    gap: 15px;
-  }
-  
-  .step-connector {
-    width: 2px;
-    height: 20px;
+    gap: 12px;
   }
   
   .step {
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .step span {
+    white-space: normal;
+    text-align: left;
+  }
+}
+
+/* Extra Small Mobile (up to 320px) */
+@media (max-width: 320px) {
+  .loading-card {
+    padding: 20px 15px;
+  }
+  
+  .step {
+    gap: 8px;
+  }
+  
+  .step span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .loading-container {
+    min-height: 150px;
+  }
+  
+  .loading-card {
+    padding: 20px 30px;
+  }
+  
+  .loading-icon {
+    margin-bottom: 15px;
+  }
+  
+  .loading-card h3 {
+    margin-bottom: 15px;
+  }
+  
+  .loading-steps {
+    margin-bottom: 15px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .loading-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .loading-icon,
+  .step.active i,
+  .progress-fill {
+    animation: none;
   }
 }

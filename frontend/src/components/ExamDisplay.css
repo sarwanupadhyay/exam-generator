@@ -1,75 +1,87 @@
 .exam-display {
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 clamp(10px, 3vw, 20px);
 }
 
 /* Exam Header (visible only on screen) */
 .exam-header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px 30px;
-  margin-bottom: 30px;
+  border-radius: clamp(12px, 3vw, 15px);
+  padding: clamp(15px, 4vw, 20px) clamp(20px, 5vw, 30px);
+  margin-bottom: clamp(20px, 4vw, 30px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .exam-info {
-  display: inline-block;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  gap: clamp(15px, 3vw, 20px);
   color: #333;
+  flex: 1;
+  min-width: 200px;
 }
 
 .exam-icon {
-  font-size: 50px;
+  font-size: clamp(35px, 6vw, 50px);
   color: #34a853;
+  flex-shrink: 0;
 }
 
 .exam-details h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  margin-bottom: clamp(8px, 2vw, 10px);
   color: #1a1a1a;
+  word-break: break-word;
 }
 
 .exam-meta {
   display: flex;
-  gap: 20px;
+  gap: clamp(15px, 3vw, 20px);
   flex-wrap: wrap;
 }
 
 .meta-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
+  gap: clamp(4px, 1vw, 6px);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   color: #666;
+  white-space: nowrap;
 }
 
 .meta-item i {
   color: #4285f4;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .exam-actions {
   display: flex;
-  gap: 10px;
+  gap: clamp(8px, 2vw, 10px);
   flex-wrap: wrap;
 }
 
 .action-btn {
-  padding: 12px 20px;
+  padding: clamp(10px, 2.5vw, 12px) clamp(15px, 3vw, 20px);
   border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  border-radius: clamp(6px, 1.5vw, 8px);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
+  min-height: 40px;
+  white-space: nowrap;
 }
 
 .print-btn {
@@ -106,49 +118,53 @@
 .exam-paper {
   background: white;
   color: #333;
-  border-radius: 10px;
-  padding: 40px;
+  border-radius: clamp(8px, 2vw, 10px);
+  padding: clamp(25px, 5vw, 40px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .paper-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(30px, 6vw, 40px);
   border-bottom: 2px solid #333;
-  padding-bottom: 30px;
+  padding-bottom: clamp(20px, 4vw, 30px);
 }
 
 .exam-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: clamp(15px, 3vw, 20px);
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 1px;
+  word-break: break-word;
+  line-height: 1.2;
 }
 
 .exam-info-print {
-  margin-bottom: 25px;
+  margin-bottom: clamp(20px, 4vw, 25px);
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  margin-bottom: clamp(8px, 2vw, 10px);
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  gap: 10px;
 }
 
 .instructions {
   text-align: left;
-  max-width: 500px;
+  max-width: min(500px, 100%);
   margin: 0 auto;
 }
 
 .instructions h3 {
-  margin-bottom: 15px;
+  margin-bottom: clamp(12px, 3vw, 15px);
   color: #333;
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
 }
 
 .instructions ul {
@@ -157,110 +173,120 @@
 }
 
 .instructions li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  margin-bottom: clamp(6px, 1.5vw, 8px);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  line-height: 1.4;
 }
 
 /* Questions Section */
 .questions-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: clamp(25px, 5vw, 30px);
   color: #1a1a1a;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  padding-bottom: clamp(8px, 2vw, 10px);
 }
 
 .question-item {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: clamp(25px, 5vw, 35px);
   align-items: flex-start;
-  gap: 15px;
+  gap: clamp(10px, 3vw, 15px);
 }
 
 .question-number {
   background: #4285f4;
   color: white;
-  width: 35px;
-  height: 35px;
+  width: clamp(30px, 6vw, 35px);
+  height: clamp(30px, 6vw, 35px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   flex-shrink: 0;
 }
 
 .question-content {
   flex: 1;
+  width: 100%;
 }
 
 .question-text {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: clamp(15px, 3vw, 20px);
   color: #333;
+  word-break: break-word;
 }
 
 .answer-space {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 15px;
+  gap: clamp(8px, 2vw, 10px);
+  margin-top: clamp(12px, 3vw, 15px);
 }
 
 .answer-label {
   font-weight: 600;
   color: #666;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  flex-shrink: 0;
 }
 
 .answer-line {
   flex: 1;
   height: 2px;
   background: #ddd;
-  min-width: 200px;
+  min-width: clamp(150px, 30vw, 200px);
 }
 
 /* Exam Footer */
 .exam-footer {
-  margin-top: 50px;
-  padding-top: 30px;
+  margin-top: clamp(40px, 8vw, 50px);
+  padding-top: clamp(25px, 5vw, 30px);
   border-top: 1px solid #ddd;
   text-align: center;
 }
 
 .footer-content p {
   color: #999;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   margin-bottom: 5px;
 }
 
 /* Print Styles */
 @media print {
   @page {
-    margin: 30px;
+    margin: 20px;
+    size: A4;
   }
+  
   .exam-display {
     max-width: none;
+    padding: 0;
+  }
+  
+  .exam-header {
+    display: none !important;
   }
   
   .exam-paper {
     box-shadow: none;
     border-radius: 0;
-    padding: 20px;
-    margin-top: -170px;
-    text-align: left;
+    padding: 15px;
+    margin: 0;
   }
   
   .exam-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .question-item {
     break-inside: avoid;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
   
   .answer-line {
@@ -269,65 +295,197 @@
   }
   
   .paper-header {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .question-text {
+    font-size: 1rem;
+  }
+  
+  .instructions li {
+    font-size: 0.9rem;
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .exam-paper {
+    padding: 50px;
+  }
+  
+  .exam-header {
+    padding: 25px 35px;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .exam-display {
+    padding: 0 15px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
   .exam-header {
     flex-direction: column;
-    gap: 20px;
+    align-items: stretch;
     text-align: center;
   }
-  
+
   .exam-info {
+    justify-content: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
-  
+
   .exam-meta {
     justify-content: center;
+    gap: 15px;
   }
-  
+
   .exam-actions {
     justify-content: center;
+    gap: 12px;
   }
-  
-  .exam-paper {
-    padding: 25px 20px;
-  }
-  
-  .exam-title {
-    font-size: 2rem;
+}
+
+/* Small Tablet (576px - 767px) */
+@media (max-width: 767px) {
+  .exam-display {
+    padding: 0 10px;
   }
   
   .info-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .instructions {
+    text-align: left;
+  }
+  
+  .instructions ul {
+    padding-left: 20px;
+    list-style-position: outside;
   }
 }
 
-@media (max-width: 480px) {
-  .exam-paper {
-    padding: 20px 15px;
+/* Mobile (480px - 575px) */
+@media (max-width: 575px) {
+  .exam-display {
+    padding: 0 5px;
   }
   
-  .exam-title {
-    font-size: 1.5rem;
+  .exam-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .action-btn {
+    width: 100%;
+    justify-content: center;
   }
   
   .question-item {
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
   }
   
   .question-number {
     align-self: flex-start;
   }
+}
+
+/* Small Mobile (up to 479px) */
+@media (max-width: 479px) {
+  .exam-paper {
+    padding: 20px 15px;
+  }
   
-  .action-btn {
-    padding: 10px 16px;
+  .exam-header {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  
+  .question-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+  }
+}
+
+/* Extra Small Mobile (up to 320px) */
+@media (max-width: 320px) {
+  .exam-paper {
+    padding: 15px 10px;
+  }
+  
+  .exam-header {
+    padding: 10px;
+  }
+  
+  .question-number {
+    width: 25px;
+    height: 25px;
     font-size: 0.8rem;
+  }
+  
+  .answer-line {
+    min-width: 120px;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .exam-header {
+    padding: 10px 20px;
+    margin-bottom: 15px;
+  }
+  
+  .paper-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .question-item {
+    margin-bottom: 15px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .action-btn {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .action-btn:hover {
+    transform: none; /* Disable hover effects on touch devices */
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .exam-paper {
+    border: 2px solid #000;
+  }
+  
+  .question-number {
+    background: #000;
+    border: 2px solid #fff;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .action-btn {
+    transition: none;
+  }
+  
+  .action-btn:hover {
+    transform: none;
   }
 }
