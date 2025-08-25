@@ -1,0 +1,178 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  color: rgb(62, 2, 2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.app-header {
+  padding: 20px 0;
+  margin-bottom: 0px;
+}
+
+
+
+.logo {
+  font-size: 70px;
+  color: #ec7379;
+  margin-bottom: 10px;
+}
+
+.app-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #7403f5, #9540f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generator-section,
+.loading-section,
+.error-section,
+.exam-section {
+  width: 100%;
+  max-width: 900px;
+}
+
+.loading-section {
+  padding: 60px 0;
+}
+
+.error-section {
+  padding: 40px 0;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 50px;
+  padding: 30px 0;
+  opacity: 1;
+  font-size: 1rem;
+  
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet (up to 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .app-header h1 {
+    font-size: 2.8rem;
+  }
+
+  .app-header p {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    font-size: 55px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .generator-section,
+  .exam-section {
+    max-width: 100%;
+  }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .header-content {
+    padding: 20px 15px;
+  }
+
+  .generator-section,
+  .exam-section,
+  .loading-section,
+  .error-section {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* make generator card slightly smaller than others */
+  .generator-section {
+    width: 90%;
+  }
+
+  .app-footer {
+    font-size: 0.9rem;
+    padding: 20px 0;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .app-header p {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .header-content {
+    padding: 15px 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  /* shrink generator card more on small phones */
+  .generator-section {
+    width: 80%;
+    padding: 15px 12px;
+  }
+
+  .app-footer {
+    font-size: 0.8rem;
+  }
+}

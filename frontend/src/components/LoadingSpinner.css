@@ -1,0 +1,186 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loading-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+  color: #333;
+}
+
+.loading-icon {
+  font-size: 80px;
+  color: #4285f4;
+  margin-bottom: 25px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.loading-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.loading-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  opacity: 1;
+  color: #4285f4;
+}
+
+.step i {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(66, 133, 244, 0.1);
+  border: 2px solid rgba(66, 133, 244, 0.3);
+}
+
+.step.active i {
+  background: rgba(66, 133, 244, 0.2);
+  border-color: #4285f4;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.step span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step-connector {
+  width: 30px;
+  height: 2px;
+  background: rgba(66, 133, 244, 0.3);
+  opacity: 0.4;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(66, 133, 244, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4285f4, #34a853);
+  border-radius: 3px;
+  width: 0%;
+  animation: progress 3s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+
+.loading-note {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loading-card {
+    padding: 40px 30px;
+    margin: 0 20px;
+  }
+  
+  .loading-icon {
+    font-size: 60px;
+  }
+  
+  .loading-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .loading-steps {
+    gap: 10px;
+  }
+  
+  .step i {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .step-connector {
+    width: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-card {
+    padding: 30px 20px;
+  }
+  
+  .loading-steps {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .step-connector {
+    width: 2px;
+    height: 20px;
+  }
+  
+  .step {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
