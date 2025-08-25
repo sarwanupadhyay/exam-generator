@@ -37,13 +37,16 @@ const ExamGenerator = ({ onGenerate, onLoadingChange, onError }) => {
       onError('Please enter a number between 1 and 20 questions');
       return;
     }
-    
+
 
     onLoadingChange(true);
     onError(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/generate-exam', {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+
+      const response = await axios.post(`${API_BASE_URL}/generate-exam`, {
+
         topic: topic.trim(),
         questionCount: parseInt(questionCount),
         gradeLevel: gradeLevel,
