@@ -69,6 +69,7 @@ Requirements:
 - Questions should progressively increase in difficulty for higher grades
 - Keep wording clear and understandable
 - Do NOT include the answers in the response
+- Specify the variety of question type (short answer, long answer) inside the bracket at the end
 
 Example question types for reference:
 

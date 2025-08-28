@@ -29,12 +29,12 @@ const ExamGenerator = ({ onGenerate, onLoadingChange, onError }) => {
     e.preventDefault();
 
     if (!topic.trim()) {
-      onError('Please enter a math topic');
+      onError('Please enter a  topic');
       return;
     }
 
-    if (questionCount < 1 || questionCount > 20) {
-      onError('Please enter a number between 1 and 20 questions');
+    if (questionCount < 1 || questionCount > 30) {
+      onError('Please enter a number between 1 and 30 questions');
       return;
     }
 
