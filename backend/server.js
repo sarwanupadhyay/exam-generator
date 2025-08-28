@@ -33,9 +33,9 @@ app.post('/generate-exam', async (req, res) => {
       });
     }
 
-    if (questionCount < 1 || questionCount > 20) {
+    if (questionCount < 1 || questionCount > 30) {
       return res.status(400).json({
-        error: 'Question count must be between 1 and 20'
+        error: 'Question count must be between 1 and 30'
       });
     }
     if (!gradeLevel || gradeLevel < 1 || gradeLevel > 12) {
