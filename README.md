@@ -51,7 +51,7 @@ ai-exam-generator/
     │   │   ├── LoadingSpinner.js   # Loading animation
     │   │   ├── LoadingSpinner.css
     │   │   ├── ErrorMessage.js     # Error handling component
-    │   │   └── ErrorMessage.css
+    │   │   └── ErrorMessage.css77777777
     │   ├── App.js              # Main application component
     │   ├── App.css
     │   ├── index.js            # React entry point
