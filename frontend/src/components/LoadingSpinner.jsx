@@ -25,7 +25,7 @@ const LoadingSpinner = () => {
             <span>Complete</span>
           </div>
         </div>
-        <p className="loading-text">Creating age-appropriate questions...</p>
+        <p className="loading-text">Creating grade-appropriate questions...</p>
         <div className="progress-bar">
           <div className="progress-fill"></div>
         </div>
